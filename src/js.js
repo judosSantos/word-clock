@@ -14,4 +14,4 @@ function pingPongVideo() {
     }
   });
 }
-pingPongVideo;
+pingPongVideo();
