@@ -9,13 +9,13 @@ function prompTime(event) {
   if (event.target.value === "tokyo") {
     let tokyoTime = moment()
       .tz("Asia/Tokyo")
-      .format("dddd, Do MMMM YYYY, HH:MM");
+      .format("dddd, Do MMMM YYYY, hh:mm a");
     alert(`${tokyoTime} in Tokyo/Japan`);
   }
   if (event.target.value === "sydney") {
     let sydneyTime = moment()
       .tz("Australia/Sydney")
-      .format("dddd, Do MMMM YYYY, HH:MM");
+      .format("dddd, Do MMMM YYYY, hh:mm a");
     alert(`${sydneyTime} in Sydney/Australia`);
   }
 }
