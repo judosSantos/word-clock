@@ -1,28 +1,24 @@
-function pingPongVideo() {
-  // aguarda o DOM estar pronto
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", pingPongVideo);
-    return;
+function prompTime(event) {
+  if (event.target.value === "paris") {
+    let parisTime = moment()
+      .tz("Europe/Paris")
+      .format("dddd, Do MMMM YYYY, hh:mm a");
+    alert(`${parisTime} in Paris/France`);
   }
 
-  const video = document.getElementById("backgroundVideo");
-  if (!video) {
-    console.error("Video element not found");
-    return;
+  if (event.target.value === "tokyo") {
+    let tokyoTime = moment()
+      .tz("Asia/Tokyo")
+      .format("dddd, Do MMMM YYYY, HH:MM");
+    alert(`${tokyoTime} in Tokyo/Japan`);
   }
-
-  let reverse = false;
-
-  // garante que o vídeo começou a carregar
-  video.addEventListener("loadedmetadata", () => {
-    video.play(); // força o play (resolve alguns bloqueios)
-  });
-
-  video.addEventListener("timeupdate", () => {
-    if (!reverse && video.currentTime >= video.duration - 0.1) reverse = true;
-    if (reverse && video.currentTime <= 0.1) reverse = false;
-    if (reverse) video.currentTime -= 0.03;
-  });
+  if (event.target.value === "sydney") {
+    let sydneyTime = moment()
+      .tz("Australia/Sydney")
+      .format("dddd, Do MMMM YYYY, HH:MM");
+    alert(`${sydneyTime} in Sydney/Australia`);
+  }
 }
 
-pingPongVideo();
+let selectElement = document.querySelector("#country");
+selectElement.addEventListener("change", prompTime);
