@@ -12,6 +12,7 @@ body {
   width: 100%;
   display: block;
   z-index: -1;
+  object-fit: cover;
 }
 main {
   background-color: tomato;
