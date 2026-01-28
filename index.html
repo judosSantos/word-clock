@@ -26,17 +26,28 @@
       <source src="src/background.mp4" type="video/mp4" />
     </video>
     <main>
+      <h1>Word Clock</h1>
       <form>
         <label for="country">Discover what time it is in a country:</label>
-        <div id="timeDisplay">
+        <div id="countrySelector">
           <select id="country">
-            <option value="">Select a country</option>
-            <option value="paris">Paris 🇫🇷</option>
-            <option value="tokyo">Tokyo 🇯🇵</option>
-            <option value="sydney">Sydney 🇦🇺</option>
+            <option value="">Select a City</option>
+            <option value="paris">London</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="sydney">New York</option>
           </select>
         </div>
       </form>
+      <div id="clockContainer">
+        <h2>Los Angeles</h2>
+        <div id="date">January 15th 2026</div>
+        <div id="clock">15h00</div>
+      </div>
+      <div id="clockContainer">
+        <h2>Sao Paulo</h2>
+        <div id="date">January 15th 2026</div>
+        <div id="clock">15h00</div>
+      </div>
     </main>
     <footer>
       This AI project was coded by
