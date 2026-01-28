@@ -12,7 +12,7 @@
 main {
   background-color: rgb(8, 31, 55, 0.6);
   text-align: center;
-  margin-top: 70px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
@@ -25,7 +25,7 @@ main {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .clockContainer {
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
@@ -33,12 +33,46 @@ main {
 }
 #country {
   font-size: 15px;
-  padding: 17px 20px;
-  border-radius: 30px;
+  padding: 13px 17px;
+  border-radius: 15px;
   border: none;
   margin-top: 8px;
   background-color: #0b3679;
   color: rgb(183, 178, 178);
+  width: 100%;
+}
+#clockContainer {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(183, 178, 178, 0.6);
+  padding: 15px 0;
+  margin-top: 20px 0;
+}
+#clockContainer:last-child {
+  border: none;
+}
+#clock {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(183, 178, 178);
+  min-height: 50px;
+  margin-top: 18px;
+}
+#clock small {
+  font-size: 10px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  margin-left: 0;
+  text-align: left;
+}
+#date {
+  font-size: 15px;
+  margin-top: 0px;
+  font-style: italic;
 }
 footer {
   background-color: rgb(8, 31, 55, 0.6);
