@@ -1,8 +1,3 @@
-html,
-body {
-  overflow: hidden; /* remove scroll */
-}
-
 .backgroundVideo {
   position: absolute;
   top: 0;
@@ -10,14 +5,14 @@ body {
   bottom: 0;
   right: 0;
   width: 100%;
-  display: block;
+  height: 100%;
   z-index: -1;
   object-fit: cover;
 }
 main {
   background-color: rgb(8, 31, 55, 0.6);
   text-align: center;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
@@ -38,4 +33,31 @@ main {
   margin-top: 8px;
   background-color: #0b3679;
   color: rgb(183, 178, 178);
+}
+footer {
+  background-color: rgb(8, 31, 55, 0.6);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(183, 178, 178);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 5px;
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 690px;
+}
+
+footer a {
+  color: rgb(183, 178, 178);
+  text-decoration: none;
+}
+footer a:hover {
+  color: rgb(33, 26, 108);
+  text-decoration: underline;
 }
