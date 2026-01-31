@@ -44,7 +44,7 @@ function updateCity(event) {
         <small>${cityTime.format("A")}</small>
       </div>
     </div>
-    <a href="index.html" class="backLink">⟵ Back to all clocks</a>
+    <a href="index.html" class="backlink">⟵ Back to all clocks</a>
   `;
 }
 
