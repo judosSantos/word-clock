@@ -1,58 +1,51 @@
-function prompTime(event) {
-  if (event.target.value === "paris") {
-    let parisTime = moment()
-      .tz("Europe/Paris")
-      .format("dddd, Do MMMM YYYY, hh:mm a");
-    alert(`${parisTime} in Paris/France`);
-  }
-
-  if (event.target.value === "tokyo") {
-    let tokyoTime = moment()
-      .tz("Asia/Tokyo")
-      .format("dddd, Do MMMM YYYY, hh:mm a");
-    alert(`${tokyoTime} in Tokyo/Japan`);
-  }
-  if (event.target.value === "sydney") {
-    let sydneyTime = moment()
-      .tz("Australia/Sydney")
-      .format("dddd, Do MMMM YYYY, hh:mm a");
-    alert(`${sydneyTime} in Sydney/Australia`);
-  }
-}
-
-let selectElement = document.querySelector("#country");
-selectElement.addEventListener("change", prompTime);
-
-// London Clock
-function updateLondonTime() {
+function updateTime() {
+  // London Clock
   let londonElement = document.querySelector("#london");
-  let londonDateElement = londonElement.querySelector(".date");
-  let londonClockElement = londonElement.querySelector(".clock");
-  londonClockElement.innerHTML = moment()
-    .tz("Europe/London")
-    .format("hh:mm:ss [<small>]A[</small>]");
-  londonDateElement.innerHTML = moment()
-    .tz("Europe/London")
-    .format("Do MMMM YYYY");
-}
-
-updateLondonTime();
-
-// Sao Paulo Clock
-function updateSaoPauloTime() {
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonClockElement = londonElement.querySelector(".clock");
+    londonClockElement.innerHTML = moment()
+      .tz("Europe/London")
+      .format("hh:mm:ss [<small>]A[</small>]");
+    londonDateElement.innerHTML = moment()
+      .tz("Europe/London")
+      .format("Do MMMM YYYY");
+  }
+  // Sao Paulo Clock
   let saoPauloElement = document.querySelector("#saoPaulo");
-  let saoPauloDateElement = saoPauloElement.querySelector(".date");
-  let saoPauloClockElement = saoPauloElement.querySelector(".clock");
-  saoPauloClockElement.innerHTML = moment()
-    .tz("America/Sao_Paulo")
-    .format("hh:mm:ss [<small>]A[</small>]");
-  saoPauloDateElement.innerHTML = moment()
-    .tz("America/Sao_Paulo")
-    .format("Do MMMM YYYY");
+  if (saoPauloElement) {
+    let saoPauloDateElement = saoPauloElement.querySelector(".date");
+    let saoPauloClockElement = saoPauloElement.querySelector(".clock");
+    saoPauloClockElement.innerHTML = moment()
+      .tz("America/Sao_Paulo")
+      .format("hh:mm:ss [<small>]A[</small>]");
+    saoPauloDateElement.innerHTML = moment()
+      .tz("America/Sao_Paulo")
+      .format("Do MMMM YYYY");
+  }
 }
-updateSaoPauloTime();
 
-setInterval(updateLondonTime, 1000);
-setInterval(updateSaoPauloTime, 1000);
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+    <div class="clockContainer" id="selectedCity">
+      <div>
+        <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
+      </div>
+      <div class="clock">
+        ${cityTime.format("hh:mm:ss")}
+        <small>${cityTime.format("A")}</small>
+      </div>
+    </div>
+  `;
+}
 
-//ping pong
+updateTime();
+setInterval(updateTime, 1000);
+
+let citiesSelectElement = document.querySelector("#country");
+citiesSelectElement.addEventListener("change", updateCity);
