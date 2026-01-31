@@ -28,8 +28,12 @@ main {
   margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
-  color: #ffffff;
   min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(183, 178, 178, 0.6);
+  padding: 15px 0;
+  margin-top: 20px 0;
 }
 #country {
   font-size: 15px;
@@ -37,28 +41,22 @@ main {
   border-radius: 15px;
   border: none;
   margin-top: 8px;
-  background-color: #0b3679;
+  background-color: #0f355d;
   color: rgb(183, 178, 178);
   width: 100%;
 }
-#clockContainer {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgb(183, 178, 178, 0.6);
-  padding: 15px 0;
-  margin-top: 20px 0;
-}
-#clockContainer:last-child {
+
+.clockContainer:last-child {
   border: none;
 }
-#clock {
+.clock {
   font-size: 32px;
   font-weight: bold;
   color: rgb(183, 178, 178);
   min-height: 50px;
   margin-top: 18px;
 }
-#clock small {
+.clock small {
   font-size: 10px;
   margin-top: 0;
   vertical-align: middle;
@@ -69,7 +67,7 @@ h2 {
   margin-left: 0;
   text-align: left;
 }
-#date {
+.date {
   font-size: 15px;
   margin-top: 0px;
   font-style: italic;
