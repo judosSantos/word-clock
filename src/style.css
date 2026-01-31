@@ -90,7 +90,21 @@ footer {
   margin-right: auto;
   max-width: 690px;
 }
-
+.backlink {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(183, 178, 178);
+  text-decoration: none;
+}
+.backlink:hover {
+  color: rgb(132, 131, 142);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.backlink:visited {
+  color: rgb(183, 178, 178);
+}
 footer a {
   color: rgb(183, 178, 178);
   text-decoration: none;
